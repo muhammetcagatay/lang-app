@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+  apigateway:
+    image: apigateway_image
+    build:
+      context: .
+      dockerfile: src/ApiGateway/Dockerfile
+  authservice:
+    image: authservice_image
+    build:
+      context: .
+      dockerfile: src/Services/AuthServer/AuthServer.API/Dockerfile
+  scorservice:
+    image: scorservice_image
+    build:
+      context: .
+      dockerfile: src/Services/Scor/Dockerfile
+  speakingservice:
+    image: speakingservice_image
+    build:
+      context: .
+      dockerfile: src/Services/Speaking/Dockerfile
+  speechrecognitionservice:
+    image: speechrecognitionservice_image
+    build:
+      context: .
+      dockerfile: src/Services/SpeechRecognition/Dockerfile
+  userservice:
+    image: userservice_image
+    build:
+      context: .
+      dockerfile: src/Services/User.Service/Dockerfile
+  vocabularyservice:
+    image: vocabularyservice_image
+    build:
+      context: .
+      dockerfile: src/Services/Vocabulary/Vocabulary.API/Dockerfile

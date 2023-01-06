@@ -1,0 +1,59 @@
+{
+  "SwaggerEndPoints": [
+    {
+      "Key": "authservice",
+      "TransformByOcelotConfig": true,
+      "Config": [
+        {
+          "Name": "Auth Service",
+          "Version": "1.0",
+          "Url": "http://apigateway/authservice/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "speakingservice",
+      "TransformByOcelotConfig": true,
+      "Config": [
+        {
+          "Name": "Speaking Service",
+          "Version": "1.0",
+          "Url": "http://apigateway/speakingservice/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "userservice",
+      "TransformByOcelotConfig": true,
+      "Config": [
+        {
+          "Name": "User Service",
+          "Version": "1.0",
+          "Url": "http://apigateway/userservice/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "scorservice",
+      "TransformByOcelotConfig": true,
+      "Config": [
+        {
+          "Name": "Scor Service",
+          "Version": "1.0",
+          "Url": "http://apigateway/scorservice/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "vocabularyservice",
+      "TransformByOcelotConfig": true,
+      "Config": [
+        {
+          "Name": "Vocabulary Service",
+          "Version": "1.0",
+          "Url": "http://apigateway/vocabularyservice/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}

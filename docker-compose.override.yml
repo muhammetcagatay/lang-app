@@ -1,0 +1,73 @@
+version: '3.8'
+services:
+  mssql:
+    container_name: mssql
+    restart: always
+    environment:
+      - SA_PASSWORD=password123*
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+  apigateway:
+    container_name: apigateway
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development   
+    ports:
+      - "5001:80"
+    depends_on:
+      - authservice
+      - scorservice
+      - speakingservice
+      - speechrecognitionservice
+      - userservice
+      - vocabularyservice
+  authservice:
+    container_name: authservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:mssql=Server=mssql,1433;Database=AuthServerDB;User Id=sa;Password=password123*;"
+    ports:
+      - "5002:80"
+    depends_on:
+      - mssql 
+  scorservice:
+    container_name: scorservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:mssql=Server=mssql,1433;Database=ScorDB;User Id=sa;Password=password123*;"
+    ports:
+      - "5003:80"
+    depends_on:
+      - mssql 
+  speakingservice:
+    container_name: speakingservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:mssql=Server=mssql,1433;Database=SpeakingDB;User Id=sa;Password=password123*;"
+    ports:
+      - "5004:80"
+    depends_on:
+      - speechrecognitionservice 
+      - mssql 
+  speechrecognitionservice:
+    container_name: speechrecognitionservice
+    ports:
+      - "5000:5000"
+  userservice:
+    container_name: userservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:mssql=Server=mssql,1433;Database=UserDB;User Id=sa;Password=password123*;"
+    ports:
+      - "5005:80"
+    depends_on:
+      - mssql 
+  vocabularyservice:
+    container_name: vocabularyservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:mssql=Server=mssql,1433;Database=VocabularyDB;User Id=sa;Password=password123*;"
+    ports:
+      - "5006:80"
+    depends_on:
+      - mssql 
