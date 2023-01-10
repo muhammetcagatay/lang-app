@@ -56,13 +56,13 @@ The main idea of ​​creating this project is to create JWT Authentication sys
 
 You can take a look at the programming languages, frameworks, databases and other tools I used while developing the project below.
 
-* [.Net Core](https://docs.microsoft.com/tr-tr/dotnet/core/introduction)
-* [Entity Framework Core](https://docs.microsoft.com/tr-tr/ef/core/)
+* [.NET6](https://docs.microsoft.com/tr-tr/dotnet/core/introduction)
+* [Entity Framework Core 6](https://docs.microsoft.com/tr-tr/ef/core/)
 * [Docker](https://www.docker.com)
-* [MongoDB](https://www.mongodb.com)
-* [PostgreSQL](https://www.postgresql.org)
-* [Postman](https://www.postman.com)
-* [DBeaver](https://dbeaver.io)
+* [MSSQL](https://learn.microsoft.com/en-us/sql/?view=sql-server-ver16)
+* [React](https://reactjs.org/)
+* [Python](https://docs.python.org/3/)
+* [Flask](https://flask.palletsprojects.com/en/2.2.x/)
 * [Ocelot](https://github.com/ThreeMammals/Ocelot)
 
 ## :electric_plug: Installation
@@ -71,36 +71,19 @@ Follow the steps below to run the project in your local
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/muhammetcagatay/jwt-authentication.git
+   git clone https://github.com/muhammetcagatay/lang-app.git
    ```
-
-2. Create SQL Server Docker container
+2. Go to project folder
    ```sh
-   docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=password123*" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+   cd lang-app
    ```
-
-3. Go to project folder
+3. Docker compose
    ```sh
-   cd jwt-authentication/api
-   ```
-4. Restore and run api
-   ```sh
-   dotnet restore
-   dotnet run
-   ```
-5. Open new terminal and install npm packages 
-   ```sh
-   cd client
-   npm install
-   ```
-   
-5. Run Client
-   ```sh
-   npm start
+   docker-compose up
    ```
 
 ## :earth_americas: Endpoints
-Listening and serving API Gateway HTTPS on : 5001
+Listening and serving API Gateway HTTP on : 5001
 
 | Method | URL | Description |
 | --- | --- | --- |
