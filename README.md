@@ -36,9 +36,9 @@
 ## :beginner: About The Project
 
 <div align="center">
- 
- Video
- 
+
+https://user-images.githubusercontent.com/57941950/212180071-ed6572bc-bc63-4e20-a67d-cbcb30f581df.mp4
+
 </div>
 
 Developed a foreign language learning application using microservices architecture and the latest technologies such as .NET 6, React and MSSQL. The application is composed of 6 different services:
