@@ -27,7 +27,6 @@
     <li><a href="#beginner-about-the-project">About The Project</a></li>
     <li><a href="#hammer-built-with">Built With</a></li>
     <li><a href="#electric_plug-installation">Installation</a></li>
-   <li><a href="#earth_americas-endpoints">Endpoints</a></li>
   </ol>
 </details>
 
@@ -42,15 +41,15 @@
  
 </div>
 
-The main idea of ​​creating this project is to create JWT Authentication system using .Net Core and React technologies.
+Developed a foreign language learning application using microservices architecture and the latest technologies such as .NET 6, React and MSSQL. The application is composed of 6 different services:
 
-* When the application is run, the client makes a request to the server with email and password information. If the email and password information is correct, access token and refresh token are returned to the client.
-* It makes a request to an enpoint that is authorized on the server along with the client access token. If the access token is correct, the information is responded to the client.
-* In case the access token expires, the client makes a request to the server with a refresh token and the server returns a new access token in return.
- 
+* AuthServer service: Its purpose is to distribute tokens to users for authentication.
+* User service: Its purpose is to create new users and manage their profiles.
+* Vocabulary service: This service allows users to create custom vocabulary courses and track their progress.
+* Score service: This service keeps track of users' scores and performance in the different vocabulary courses
+* This service uses speech recognition to evaluate users' pronunciation and provide feedback on the number of correct and incorrect words.
 
-
-
+This application offers an interactive and personalized way for users to learn a new language, by creating custom vocabulary courses and tracking their progress through scores and speech recognition. The use of microservices architecture allows for a more scalable and maintainable solution, while the use of .NET 6, React, and MSSQL ensure a high performance and secure application.
 
 ## :hammer: Built With
 
@@ -80,17 +79,6 @@ Follow the steps below to run the project in your local
 3. Docker compose
    ```sh
    docker-compose up
-   ```
-
-## :earth_americas: Endpoints
-Listening and serving API Gateway HTTP on : 5001
-
-| Method | URL | Description |
-| --- | --- | --- |
-| `POST` | `/api/auth/login` | `Returns of Access Token and Refresh Token` |
-| `POST` | `/api/auth/refreshToken` | `Returns of new Access Token and Refresh Token` |
-| `GET - Authorize` | `/api/home` | `Returns the "Giriş Başarılı" message` |
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
