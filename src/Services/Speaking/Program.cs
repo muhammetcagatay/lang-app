@@ -1,5 +1,6 @@
 using Google.Api;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -53,7 +54,12 @@ builder.Services.AddScoped<ISoundService, SoundService>();
 builder.Services.AddCors(options =>
      options.AddDefaultPolicy(builder =>
      builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()));
-
+builder.Services.Configure<FormOptions>(options =>
+{
+    options.ValueLengthLimit = int.MaxValue;
+    options.MultipartBodyLengthLimit = int.MaxValue;
+    options.MultipartHeadersLengthLimit = int.MaxValue;
+});
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 SymmetricSecurityKey signInKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecurityKey"]));
@@ -91,8 +97,6 @@ var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI();
-
-app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();

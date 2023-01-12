@@ -1,11 +1,8 @@
-import Account from "../views/Account";
-import Course from "../views/Course";
-import Home from "../views/Home";
 import Login from "../views/Login";
+import Page404 from "../views/Page404";
 import SignIn from "../views/SignIn";
+import Speaking from "../views/Speaking";
 import Vocabulary from "../views/Vocabulary";
-import Word from "../views/Word";
-
 const routes = [
   {
     path: "/login",
@@ -15,28 +12,24 @@ const routes = [
     path: "/signin",
     component: <SignIn />,
   },
+  {
+    path: "*",
+    component: <Page404 />,
+  },
 ];
 
 const protectedRoutes = [
   {
     path: "/",
-    component: <Home />,
+    component: <Vocabulary />,
   },
   {
     path: "/vocabulary",
     component: <Vocabulary />,
   },
   {
-    path: "/account",
-    component: <Account />,
-  },
-  {
-    path: "course/:courseId",
-    component: <Course />,
-  },
-  {
-    path: "word/:wordId",
-    component: <Word />,
+    path: "speaking",
+    component: <Speaking />,
   },
 ];
 

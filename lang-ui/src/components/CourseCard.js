@@ -30,11 +30,6 @@ const CourseCard = ({ image, title, content, courseId }) => {
             {content}
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button onClick={handleClick} size="small">
-            Learn More
-          </Button>
-        </CardActions>
       </Card>
     </div>
   );

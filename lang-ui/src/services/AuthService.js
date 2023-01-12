@@ -1,10 +1,11 @@
+import AuthHeader from "../helpers/AuthHeader";
 import Config from "../helpers/Config";
 
 const AuthService = {
   Login(email, password) {
     var requestOptions = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: AuthHeader.GetHeader(),
       body: JSON.stringify({ email, password }),
     };
     return fetch(Config.service.auth.login, requestOptions)

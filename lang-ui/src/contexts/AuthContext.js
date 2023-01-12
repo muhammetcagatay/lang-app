@@ -11,6 +11,8 @@ const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    setError("");
+    setLoading(false);
     const token = JSON.parse(localStorage.getItem("auth"));
     if (token) {
       if (RefreshTokenCheck(token)) {

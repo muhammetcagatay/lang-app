@@ -5,9 +5,9 @@ const Footer = () => {
       style={{ background: "#6c63ff" }}
     >
       <div className="text-center p-3 text-white">
-        © 2020 Copyright:
+        © 2023 Copyright:
         <a className="text-white" href="https://mdbootstrap.com/">
-          MDBootstrap.com
+          LangApp
         </a>
       </div>
     </footer>

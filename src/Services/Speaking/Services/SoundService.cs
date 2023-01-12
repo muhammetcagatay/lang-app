@@ -7,7 +7,7 @@ namespace Speaking.Services
 {
     public interface ISoundService
     {
-        public Task<ScorDto.ScorResponseDto> ScorSound(int userId,int textId, IFormFile file);
+        public Task<ScorDto.ScorResponseDto> ScorSound(int userId, int textId, IFormFile file);
     }
     public class SoundService : ISoundService
     {
@@ -20,18 +20,18 @@ namespace Speaking.Services
             _mapper = mapper;
         }
 
-        public async Task<ScorDto.ScorResponseDto> ScorSound(int userId,int textId, IFormFile file)
+        public async Task<ScorDto.ScorResponseDto> ScorSound(int userId, int textId, IFormFile file)
         {
-            var text = _context.Texts.Where(w => !w.IsDelete && w.Id== textId).FirstOrDefault();
-            var user = _context.Users.Where(w => !w.IsDelete && w.Id== userId).FirstOrDefault();
+            var text = _context.Texts.Where(w => !w.IsDelete && w.Id == textId).FirstOrDefault();
+            var user = _context.Users.Where(w => !w.IsDelete && w.Id == userId).FirstOrDefault();
 
-            if(text!=null && user!=null)
+            if (text != null && user != null)
             {
                 var outputText = await SpeechToText(file);
 
                 var scor = CompareTexts(text.TextContent, outputText);
 
-                if(scor!=null)
+                if (scor != null)
                 {
                     scor.UserId = userId;
                     scor.TextId = textId;
@@ -40,6 +40,8 @@ namespace Speaking.Services
                     _context.SaveChanges();
 
                     var scorDto = _mapper.Map<ScorDto.ScorResponseDto>(scor);
+
+                    scorDto.OutputText = outputText;
 
                     return scorDto;
                 }
@@ -57,7 +59,7 @@ namespace Speaking.Services
                 buffer = ms.ToArray();
             }
 
-            string apiUrl = "http://speech-recognition-service:5000/api/speech-to-text";
+            string apiUrl = "http://speechrecognitionservice:5000/api/speech-to-text";
 
             HttpClient httpClient = new HttpClient();
 
@@ -79,11 +81,16 @@ namespace Speaking.Services
 
             return null;
         }
-        private Scor CompareTexts(string originalText , string outputText)
+        private Scor CompareTexts(string originalText, string outputText)
         {
-            if(originalText == null || outputText == null)
+            if (originalText == null || outputText == null)
             {
-                return null;
+                return new Scor()
+                {
+                    TrueWord = 0,
+                    FalseWord = 0,
+                    AccuracyRate = 0,
+                };
             }
 
             var originalTextWords = originalText.Split(' ');
@@ -94,7 +101,7 @@ namespace Speaking.Services
 
             foreach (var originalTextWord in originalTextWords)
             {
-                if(outputTextWords.Any(a => a.Replace(" ","").ToLower() == originalTextWord.Replace(" ", "").ToLower()))
+                if (outputTextWords.Any(a => a.Replace(" ", "").ToLower() == originalTextWord.Replace(" ", "").ToLower()))
                 {
                     sameWord++;
                 }

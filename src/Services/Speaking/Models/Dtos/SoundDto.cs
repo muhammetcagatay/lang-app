@@ -1,4 +1,7 @@
-﻿namespace Speaking.Models.Dtos
+﻿using static Google.Rpc.Context.AttributeContext.Types;
+using System.Text;
+
+namespace Speaking.Models.Dtos
 {
     public class SoundDto
     {
@@ -7,6 +10,7 @@
             public int UserId { get; set; }
             public int TextId { get; set; }
             public IFormFile AudioFile { get; set; }
+
         }
         public class SoundResponseDto
         {

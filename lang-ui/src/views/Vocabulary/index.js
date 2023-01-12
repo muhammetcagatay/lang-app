@@ -1,81 +1,36 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import CourseCard from "../../components/CourseCard";
+import VocabularyService from "../../services/VocabularyService";
 
 const Vocabulary = () => {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      await VocabularyService.GetCourses().then((response) => {
+        console.log(response);
+        setCourses(response.data);
+      });
+    };
+    getData();
+  }, []);
+
   return (
     <div className="container">
       <div className="row">
-        <div className="col-4">
-          <CourseCard
-            image={
-              "https://www.dreamhost.com/blog/wp-content/uploads/2017/10/online_course-750x375.jpg"
-            }
-            title={"İngilizce 1"}
-            courseId={1}
-            content={
-              "Lizards are a widespread group of squamate reptiles, with over 6,000species, ranging across all continents except Antarctica"
-            }
-          />
-        </div>
-        <div className="col-4">
-          <CourseCard
-            image={
-              "https://www.dreamhost.com/blog/wp-content/uploads/2017/10/online_course-750x375.jpg"
-            }
-            courseId={2}
-            title={"Lizard"}
-            content={
-              "Lizards are a widespread group of squamate reptiles, with over 6,000species, ranging across all continents except Antarctica"
-            }
-          />
-        </div>
-        <div className="col-4">
-          <CourseCard
-            image={
-              "https://www.dreamhost.com/blog/wp-content/uploads/2017/10/online_course-750x375.jpg"
-            }
-            title={"Lizard"}
-            courseId={3}
-            content={
-              "Lizards are a widespread group of squamate reptiles, with over 6,000species, ranging across all continents except Antarctica"
-            }
-          />
-        </div>
-        <div className="col-4">
-          <CourseCard
-            image={
-              "https://www.dreamhost.com/blog/wp-content/uploads/2017/10/online_course-750x375.jpg"
-            }
-            courseId={4}
-            title={"Lizard"}
-            content={
-              "Lizards are a widespread group of squamate reptiles, with over 6,000species, ranging across all continents except Antarctica"
-            }
-          />
-        </div>
-        <div className="col-4">
-          <CourseCard
-            image={
-              "https://www.dreamhost.com/blog/wp-content/uploads/2017/10/online_course-750x375.jpg"
-            }
-            title={"Lizard"}
-            courseId={5}
-            content={
-              "Lizards are a widespread group of squamate reptiles, with over 6,000species, ranging across all continents except Antarctica"
-            }
-          />
-        </div>
-        <div className="col-4">
-          <CourseCard
-            image={
-              "https://www.dreamhost.com/blog/wp-content/uploads/2017/10/online_course-750x375.jpg"
-            }
-            title={"Lizard"}
-            courseId={6}
-            content={
-              "Lizards are a widespread group of squamate reptiles, with over 6,000species, ranging across all continents except Antarctica"
-            }
-          />
-        </div>
+        {courses.map((course) => (
+          <div className="col-4" key={course.id}>
+            <CourseCard
+              image={
+                "https://www.dreamhost.com/blog/wp-content/uploads/2017/10/online_course-750x375.jpg"
+              }
+              title={course.title}
+              courseId={1}
+              content={course.description}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ services:
       - "1433:1433"
   apigateway:
     container_name: apigateway
+    restart: always
     environment:
       - ASPNETCORE_ENVIRONMENT=Development   
     ports:
@@ -23,6 +24,7 @@ services:
       - vocabularyservice
   authservice:
     container_name: authservice
+    restart: always
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "ConnectionStrings:mssql=Server=mssql,1433;Database=AuthServerDB;User Id=sa;Password=password123*;"
@@ -32,6 +34,7 @@ services:
       - mssql 
   scorservice:
     container_name: scorservice
+    restart: always
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "ConnectionStrings:mssql=Server=mssql,1433;Database=ScorDB;User Id=sa;Password=password123*;"
@@ -41,6 +44,7 @@ services:
       - mssql 
   speakingservice:
     container_name: speakingservice
+    restart: always
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "ConnectionStrings:mssql=Server=mssql,1433;Database=SpeakingDB;User Id=sa;Password=password123*;"
@@ -51,10 +55,12 @@ services:
       - mssql 
   speechrecognitionservice:
     container_name: speechrecognitionservice
+    restart: always
     ports:
       - "5000:5000"
   userservice:
     container_name: userservice
+    restart: always
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "ConnectionStrings:mssql=Server=mssql,1433;Database=UserDB;User Id=sa;Password=password123*;"
@@ -64,6 +70,7 @@ services:
       - mssql 
   vocabularyservice:
     container_name: vocabularyservice
+    restart: always
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "ConnectionStrings:mssql=Server=mssql,1433;Database=VocabularyDB;User Id=sa;Password=password123*;"

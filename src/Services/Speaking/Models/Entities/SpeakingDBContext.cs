@@ -96,10 +96,10 @@ namespace Speaking.Models.Entities
             builder.Entity<Text>().HasData(
                 new Text
                 {
-                    Id= 1,
-                    IsDelete= false,
-                    CreatedDate= DateTime.Now,
-                    UpdatedDate= DateTime.Now,
+                    Id = 1,
+                    IsDelete = false,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
                     Title = "My Wonderful Family",
                     TextContent = "I live in a house near the mountains. I have two brothers and one sister, and I was born last. My father teaches mathematics, and my mother is a nurse at a big hospital. My brothers are very smart and work hard in school. My sister is a nervous girl, but she is very kind. My grandmother also lives with us. She came from Italy when I was two years old. She has grown old, but she is still very strong. She cooks the best food!\r\n\r\nMy family is very important to me. We do lots of things together. My brothers and I like to go on long walks in the mountains. My sister likes to cook with my grandmother. On the weekends we all play board games together. We laugh and always have a good time. I love my family very much."
                 },
@@ -118,8 +118,8 @@ namespace Speaking.Models.Entities
                     IsDelete = false,
                     CreatedDate = DateTime.Now,
                     UpdatedDate = DateTime.Now,
-                    Title = "Hi! Nice to meet you! My name is John Smith. I am 19 and a student in college. I go to college in New York. My favorite courses are Geometry, French, and History. English is my hardest course. My professors are very friendly and smart. It’s my second year in college now. I love it!\r\n\r\nI live in a big house on Ivy Street. It’s near the college campus. I share the house with three other students. Their names are Bill, Tony, and Paul. We help each other with homework. On the weekend, we play football together.\r\n\r\nI have a younger brother. He just started high school. He is 14 and lives with my parents. They live on Mulberry Street in Boston. Sometimes they visit me in New York. I am happy when they visit. My Mom always brings me sweets and candy when they come. I really miss them, too!",
-                    TextContent = ""
+                    Title = "My name is John",
+                    TextContent = "Hi! Nice to meet you! My name is John Smith. I am 19 and a student in college. I go to college in New York. My favorite courses are Geometry, French, and History. English is my hardest course. My professors are very friendly and smart. It’s my second year in college now. I love it!"
                 },
                 new Text
                 {
@@ -129,7 +129,26 @@ namespace Speaking.Models.Entities
                     UpdatedDate = DateTime.Now,
                     Title = "Our Vacation",
                     TextContent = "Every year we go to Florida. We like to go to the beach.\r\n\r\nMy favorite beach is called Emerson Beach. It is very long, with soft sand and palm trees. It is very beautiful. I like to make sandcastles and watch the sailboats go by. Sometimes there are dolphins and whales in the water!\r\n\r\nEvery morning we look for shells in the sand. I found fifteen big shells last year. I put them in a special place in my room. This year I want to learn to surf. It is hard to surf, but so much fun! My sister is a good surfer. She says that she can teach me. I hope I can do it!"
+                },
+                new Text
+                {
+                    Id = 5,
+                    IsDelete = false,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    Title = "The House",
+                    TextContent = "Mr. and Mrs. Smith have one son and one daughter. The son's name is John. The daughter's name is Sarah. he Smiths live in a house.They have a living room.They watch TV in the living room.The father cooks food in the kitchen.They eat in the dining room.The house has two bedrooms.They sleep in the bedrooms.They keep their clothes in the closet.There is one bathroom. They brush their teeth in the bathroom.",
+                },
+                new Text
+                {
+                    Id = 6,
+                    IsDelete = false,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    Title = "Preparing food",
+                    TextContent = "Jack was hungry. He walked to the kitchen. He got out some eggs. He took out some oil. He placed a skillet on the stove. Next, he turned on the heat. He poured the oil into the skillet. He cracked the eggs into a bowl. He stirred the eggs. Then, he poured them into the hot skillet. He waited while the eggs cooked. They cooked for two minutes. He heard them cooking. They popped in the oil."
                 }
+
             );
             builder.Entity<Scor>().HasData(
                 new Scor
