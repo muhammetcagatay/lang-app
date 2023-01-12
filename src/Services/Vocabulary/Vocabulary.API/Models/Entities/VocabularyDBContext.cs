@@ -327,10 +327,161 @@ namespace Vocabulary.API.Models.Entities
                     CreatedDate = DateTime.Now,
                     UpdatedDate = DateTime.Now,
                     IsDelete = false,
+                    Title = "İngilizce 1",
+                    Description = "İngilizce'nin ilham verici öğretim metodu ve kapsamlı kurs Bölüm 1 karşınızda. Kendini İngilizce tanıt, İngiltere'yi tanı, ve insanları gülümsetmek için onlarca İngilizce günlük ifadeyi öğren. Günlük konuşma İngilizcesini öğrenmek artık çok kolay.",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 2,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "Amerikan İngilizcesi 1",
+                    Description = "Kendini İngilizce tanıt, Amerika'yı tanı, ve insanları gülümsetmek için onlarca İngilizce günlük ifadeyi öğren. Amerikan İngilizcesini öğrenmek artık çok kolay.",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 3,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "Almanca 1",
+                    Description = "Kendini Almanca tanıt, Almanya'yı tanı, ve insanları gülümsetmek için onlarca Almanca günlük ifadeyi öğren. Günlük konuşma Almancasını öğrenmek artık çok kolay.",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 4,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "En Çok Kullanılan 3000 Kelime",
+                    Description = "",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 5,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "İngilizce'yi Söküyoruz!",
+                    Description = " Bu kurs temel kelimeler ve ifadeler ile hemen İngilizce konuşabilmeye başlayabilmeniz için tasarlanmıştır.",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 6,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "250 İngilizce Pratik",
+                    Description = "İngilizce'de yaygın olarak kullanılan 250 pratik. Sık kullanılan Sorular, Durumlar v.b",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 7,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "Phrasal Verbs Türkçe",
+                    Description = "Phrasal Verbs Türkçe Anlamları",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 8,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "YDS Çıkmış Kelimeler",
+                    Description = "",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 9,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "The Oxford 3000 (İngilizce - Türkçe)",
+                    Description = "Oxford eğitmenleri tarafından hazırlanan, İngilizce'de en çok kullanılan 3000 kelime",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 10,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "İngilizcedeki En Önemli 1250 Kelime",
+                    Description = "Amerikan Kültür ve Dil Kursu içi Hazırlanmış Portfolyosundaki Kelimeleri İçeren Mükemmel Bir Kurs",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 11,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "Gelişmiş ingilizce - Advanced English",
+                    Description = "Advanced English for speakers of Turkish: this course consists of a collection of useful and idiomatic phrases or sentences to help you improve your pronunciation as well as develop fluency when using complex structures.",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 12,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
                     Title = "Temel İngilizce",
                     Description = "Temel Seviyede İngilizce Öğrenme Kursu",
                     UserId = 1,
+                },
+                new Course
+                {
+                    Id = 13,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "İngilizce İlk 1000 Kelime",
+                    Description = "",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 14,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "İngilizce Temel Kelimeler",
+                    Description = "A1, A2 seviyeleri için temel kelimeler",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 15,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "YDS İngilizce Kelimeleri",
+                    Description = "ÖSYM Yabancı Dil Sınavı (YDS) için seçilmiş kelimeler.",
+                    UserId = 1,
+                },
+                new Course
+                {
+                    Id = 16,
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    IsDelete = false,
+                    Title = "30 Days English Challange",
+                    Description = "Günde 30 Kelime ile 1 Ayda 900 Kelime !",
+                    UserId = 1,
                 }
+
             );
         }
     }
