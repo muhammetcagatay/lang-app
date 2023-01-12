@@ -47,7 +47,9 @@ Developed a foreign language learning application using microservices architectu
 * User service: Its purpose is to create new users and manage their profiles.
 * Vocabulary service: This service allows users to create custom vocabulary courses and track their progress.
 * Score service: This service keeps track of users' scores and performance in the different vocabulary courses
-* This service uses speech recognition to evaluate users' pronunciation and provide feedback on the number of correct and incorrect words.
+* Speaking service: This service uses speech recognition to evaluate users' pronunciation and provide feedback on the number of correct and incorrect words.
+* Speech Recognition service: This service using Python that converts spoken words from audio files into textutilizes advanced speech-to-text algorithms to accurately transcribe the spoken words into written text. 
+
 
 This application offers an interactive and personalized way for users to learn a new language, by creating custom vocabulary courses and tracking their progress through scores and speech recognition. The use of microservices architecture allows for a more scalable and maintainable solution, while the use of .NET 6, React, and MSSQL ensure a high performance and secure application.
 
