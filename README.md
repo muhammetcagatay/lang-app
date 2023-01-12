@@ -80,7 +80,7 @@ Follow the steps below to run the project in your local
    ```
 3. Docker compose
    ```sh
-   docker-compose up 
+   docker compose  up -d --build
    ```
 4. Open new terminal and install packages
    ```sh
