@@ -80,7 +80,19 @@ Follow the steps below to run the project in your local
    ```
 3. Docker compose
    ```sh
-   docker-compose up
+   docker-compose up 
+   ```
+4. Open new terminal and install packages
+   ```sh
+   cd lang-ui
+   npm install --force
+   ```
+5. run client
+   ```sh
+   npm start
+   ```
+
+
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
